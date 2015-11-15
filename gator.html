@@ -1,10 +1,15 @@
 <head>
+<<<<<<< HEAD:index.html
 	<base href="/">
 	<link rel="stylesheet", href="gator.css" Content-Type: text/css></link>
+=======
+  <title>Gator</title>
+>>>>>>> 192db09e7d51a072993f9a1f40659df654e42c29:gator.html
 </head>
 
 <body ng-app="Gator" lang="en" ng-controller="homeController">
   <!-- Nav Section -->
+<<<<<<< HEAD:index.html
 	<template name="nav">
 		<nav>
 			<div>
@@ -20,6 +25,24 @@
 			</div>
 		</nav>
 	</template>
+=======
+  <p id="status" style="color:red; display:none;">
+    <noscript>JavaScript is disabled.</noscript>
+  </p>
+	<nav>
+		<div>
+			<img class="menu-icon" src="/images/navmenuicon.png"/>
+		</div> 
+		<div class="nav">
+			<ul class="nav-bar">
+				<li class="nav-link"><a href="/home">Map</a></li>
+				<li class="nav-link"><a href="/posts">Events</a></li>
+				<li class="nav-link"><a href="/chat">Chat</a></li>
+				<li class="nav-link"><a href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+>>>>>>> 192db09e7d51a072993f9a1f40659df654e42c29:gator.html
   <!-- <div ui-view></div> -->
 
 	<!-- Map Section -->
@@ -55,11 +78,13 @@
 	<section class="add-post-section">
 
 		<div>
-			<!-- camera view port goes here -->
+  <video id="video" width="320" height="200"></video>
+  <canvas id="photo" style="display:none;" width="320" height="280"></canvas>
 		</div> 
 
 		<div>
-			<input id="eventDescription" type='text' placeholder="Add a Description"/> 
+		  <textarea id="eventDescription" rows="4" cols="50">
+		  </textarea>
 		</div>
 
 		<div>
