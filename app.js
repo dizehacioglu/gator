@@ -38,6 +38,12 @@ if (Meteor.isClient) {
           url: '/home',
           templateUrl: 'client/templates/partials/home.html',
           controller: 'homeController'
+        })
+
+        .state('posts', {
+        	url: '/posts',
+        	templateUrl: 'client/templates/partials/posts.html',
+        	controller: 'postsController'
         });
  
       $urlRouterProvider.otherwise("/");
@@ -49,6 +55,11 @@ if (Meteor.isClient) {
   });
 
    gatorApp.controller('homeController', function ($scope, $meteor) {
+    // $scope.parties = $meteor.collection(Parties);
+    console.log('It works!')
+  });
+
+   gatorApp.controller('postsController', function ($scope, $meteor) {
     // $scope.parties = $meteor.collection(Parties);
     console.log('It works!')
   });
