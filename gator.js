@@ -25,6 +25,13 @@ if (Meteor.isClient) {
 	      });
       }
   };
+
+  function notify(user) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "https://api.pushover.net/1/messages.json", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("token=aVtFCWAdrR9q6xksfBx68XtECSCJX9&user=" + user + "&message=Something's Happening!!");
+  }
 		 
   window.initMap = function() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -129,6 +136,10 @@ if (Meteor.isClient) {
 				     lng: location.coords.longitude};
 		}
 		Events.insert(event);
+
+		// notify a couple of hard-coded users every time an event is added
+		notify("uioE5od96kZfvvoLPcQymkHaVnVEJ9");
+		notify("ucMsNS1eqbNTPY9vG6UqFQLceEGTZR");
 
 		video.play();
 	    }
