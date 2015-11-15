@@ -4,7 +4,7 @@ Events = new Mongo.Collection("events");
 if (Meteor.isClient) {
   var gatorApp = angular.module('Gator',['angular-meteor']);
 
-  var sections = ['nav', 'map', 'posts', 'add-post', 'map-header'];
+  var sections = ['nav', 'map', 'posts', 'add-post', 'map-header', 'groupup-image-container'];
 
   var markers = [];
   var map;
@@ -237,9 +237,17 @@ if (Meteor.isClient) {
 
 	    	function showAddPost(){
 	    		document.getElementById('add-post').style.display = "block";
-	    		// document.getElementById('').style.display = "block";
 	    		for(var i = 0; i < sections.length; i++){
 	    			if(sections[i] !== 'add-post'){
+	    				document.getElementById(sections[i].toString()).style.display = "none";
+	    			}
+	    		}	
+	    	}
+
+	    	function showGroup(){
+	    		document.getElementById('groupup-image-container').style.display = "block";
+	    		for(var i = 0; i < sections.length; i++){
+	    			if(sections[i] !== 'groupup-image-container'){
 	    				document.getElementById(sections[i].toString()).style.display = "none";
 	    			}
 	    		}	
@@ -251,7 +259,7 @@ if (Meteor.isClient) {
 	    		document.getElementById('nav-posts-link').onclick = showPosts
 	    		document.getElementById('nav-addpost-link').onclick = showAddPost
 	    		document.getElementById('post-event-button').onclick = showAddPost
-	    		// document.getElementById('submitEvent').onclick = showPosts
+	    		document.getElementById('nav-group-link').onclick = showGroup
 
 
 	    	}
