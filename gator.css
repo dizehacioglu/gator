@@ -11,7 +11,7 @@ body {
 
 /******************* Nav Bar Styling ***************/
 
-nav {
+#nav {
 	display: none;
 }
 
@@ -43,7 +43,7 @@ nav {
 	background-color: #02a8c2;
 }
 
-.nav-link a {
+.nav-link button {
 	color: white;
 	text-decoration: none;
 }
