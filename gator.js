@@ -30,11 +30,11 @@ if (Meteor.isClient) {
       }
   };
 
-  function notify(user) {
+  function notify(user, description) {
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", "https://api.pushover.net/1/messages.json", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("token=aVtFCWAdrR9q6xksfBx68XtECSCJX9&user=" + user + "&message=Something's Happening!!");
+      xhttp.send("token=aVtFCWAdrR9q6xksfBx68XtECSCJX9&user=" + user + "&message=New Event: " + description);
   }
 		 
   window.initMap = function() {
@@ -130,8 +130,9 @@ if (Meteor.isClient) {
 
 		console.log(data);
 
+		var description = document.getElementById("eventDescription").value;
 		var event = { image: "data:image/png;base64," + data,
-			     text: document.getElementById("eventDescription").value,
+			      text: description,
 			     createdAt: new Date() // current time
 		};
 
@@ -142,8 +143,8 @@ if (Meteor.isClient) {
 		Events.insert(event);
 
 		// notify a couple of hard-coded users every time an event is added
-		notify("uioE5od96kZfvvoLPcQymkHaVnVEJ9");
-		notify("ucMsNS1eqbNTPY9vG6UqFQLceEGTZR");
+		notify("uioE5od96kZfvvoLPcQymkHaVnVEJ9", description);
+		notify("ucMsNS1eqbNTPY9vG6UqFQLceEGTZR", description);
 
 		video.play();
 	    }
