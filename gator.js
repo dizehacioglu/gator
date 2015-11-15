@@ -40,7 +40,7 @@ if (Meteor.isClient) {
   window.initMap = function() {
       map = new google.maps.Map(document.getElementById('map'), {
 	      center: {lat: 40.0069364, lng: -105.272157},
-	      zoom: 15
+	      zoom: 14
 	  });
 
       eventsChanged();
@@ -149,10 +149,14 @@ if (Meteor.isClient) {
 	    }
 
 	    function postExamples() {
-		Events.insert({ image: "http://rebeccaniziol.com/wp-content/uploads/2013/03/concert-crowd.jpg",
-				text: "electronic music festival",
+		Events.insert({ image: "/images/boat.jpg",
+				text: "boating day -- everyone welcome",
 			      createdAt: new Date(),
-			      location: {lat: 40.0069368, lng: -105.278377} });
+				location: {lat: 40.037940, lng: -105.237138} });
+		Events.insert({ image: "/images/costumes.jpg",
+				text: "ComicCon 2015 -- bring your costume!",
+			      createdAt: new Date(),
+			    location: {lat: 40.020524, lng: -105.267093} });
 
 		Events.insert({ image: "http://i.telegraph.co.uk/multimedia/archive/02362/video-game-2_2362669b.jpg",
 				text: "mario kart tournament",
