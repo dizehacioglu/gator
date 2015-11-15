@@ -9,27 +9,16 @@
 	</div>
 </nav> 
 
-<section class="posts-wrapper">
+<section class="posts-wrapper" ng-controller="postsController">
 
-<!-- 	<div class="post-pictures">
-		<ul>
-			<li>
-				<img src="#{{each tasks.users.postpcitrues}}"/>
-			</li>	
-		</ul>
-	</div>
-
-	<div class="post-descriptions"></div> -->
-
- <table>
- 	<tr>
- 		<td class="post-pictures"></td>
- 		<td class="post-descriptions"></td>
+ <table class="posts-table">
+ 	<tr ng-repeat="event in events">
+ 		<td class="post-pictures">{{event.image}}</td>
+ 		<td class="post-descriptions">{{event.description}}</td>
  	</tr>
  </table>
 
-
-
+<button>Post an Event</button>
 
 </section>
 

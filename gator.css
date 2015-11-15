@@ -73,6 +73,19 @@ body {
 	/*float: left;*/
 }
 
+
+.posts-table tr {
+	width: 100%;
+}
+
+.posts-pictures {
+	width: 50%;
+}
+
+.posts-description {
+	width: 50%;
+}
+
 .post-pictures {
 	width: 50%;
 	height: 100%;
