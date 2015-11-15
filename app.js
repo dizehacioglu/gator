@@ -8,6 +8,18 @@ if (Meteor.isClient) {
    gatorApp.controller('homeController', function ($scope, $meteor) {
     $scope.events = $meteor.collection(Events);
     console.log('It works!')
+
+    // Template.nav.events({
+    // 'click #aRegister':function(){
+    //   $(".menu-icon").css('visibility', 'hidden');
+    //   }
+    // })
+
+
+
+
+
+
   });
 
 }
