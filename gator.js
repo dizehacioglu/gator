@@ -149,26 +149,25 @@ if (Meteor.isClient) {
 	    }
 
 
-	    var api = {}
+	   
 
-	    api.init = 	function init() {
-	    	api.attachClickEvents();
-	    };
 
-	    api.attachClickEvents = function attachClickEvents() {
-	    	document.getElementById('menu-icon').onclick = api.showNav
-	    	document.getElementById('nav-home-link').on('click', api.showMap)
-	    	document.getElementById('nav-posts-link').on('click', api.showPosts)
-	    }
 
-	    api.showNav = function showNav(e) {
-	    	console.log('event triggered')
-	    	document.getElementById('nav').style.display = "none"
-	    }
-
-	    api.init();
 	    
 	})();
+			function showNav() {
+	    		console.log('event triggered')
+	    		document.getElementById('nav').style.display = "block"
+	    	}
+
+	    	function init() {
+	    		document.getElementById('menu-icon').onclick = showNav
+	    		document.getElementById('nav-home-link').on('click', api.showMap)
+	    		document.getElementById('nav-posts-link').on('click', api.showPosts)
+	    	}
+
+	    	init()
+
     }
 
 
