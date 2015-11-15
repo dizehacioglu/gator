@@ -30,11 +30,11 @@ if (Meteor.isClient) {
       $locationProvider.html5Mode(true);
  
       $stateProvider
-        .state('/', {
-          url: '/login',
-          templateUrl: 'client/templates/partials/login.html',
-          controller: 'loginController'
-        })
+        // .state('/', {
+        //   url: '/login',
+        //   templateUrl: 'client/templates/partials/login.html',
+        //   controller: 'loginController'
+        // })
 
         .state('home', {
           url: '/home',
@@ -42,27 +42,31 @@ if (Meteor.isClient) {
           controller: 'homeController'
         })
 
-        .state('posts', {
-        	url: '/posts',
-        	templateUrl: 'client/templates/partials/posts.html',
-        	controller: 'postsController'
-        });
+        // .state('posts', {
+        // 	url: '/posts',
+        // 	templateUrl: 'client/templates/partials/posts.html',
+        // 	controller: 'postsController'
+        // });
  
       $urlRouterProvider.otherwise("/");
     });
 
-   gatorApp.controller('loginController', function ($scope, $meteor) {
-    // $scope.parties = $meteor.collection(Parties);
-    console.log('It works!')
-  });
+  //  gatorApp.controller('loginController', function ($scope, $meteor) {
+  //   // $scope.parties = $meteor.collection(Parties);
+  //   console.log('It works!')
+  // });
 
    gatorApp.controller('homeController', function ($scope, $meteor) {
     $scope.events = $meteor.collection(Events);
     console.log('It works!')
   });
 
-   gatorApp.controller('postsController', function ($scope, $meteor) {
-    // $scope.parties = $meteor.collection(Parties);
-    console.log('It works!')
+   // gatorApp.controller('postsController', function ($scope, $meteor) {
+   //  // $scope.parties = $meteor.collection(Parties);
+   //  console.log('It works!')
+
+
+
+    
   });
 }

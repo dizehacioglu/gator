@@ -1,19 +1,28 @@
 <head>
-	<base href="/login">
+	<base href="/">
 	<script>console.log('duplicated if jQuery');</script>
 	<link(rel="stylesheet", href="gator.css")></link>
 </head>
 
 <body ng-app="Gator" lang="en" ng-strict-di="">
-  <!-- <h1>Welcome to Gator!</h1> -->
+  <!-- Nav Section -->
+	<nav>
+		<div>
+			<img class="menu-icon" src="/images/navmenuicon.png"/>
+		</div> 
+		<div class="nav">
+			<ul class="nav-bar">
+				<li class="nav-link"><a href="/home">Map</a></li>
+				<li class="nav-link"><a href="/posts">Events</a></li>
+				<li class="nav-link"><a href="/chat">Chat</a></li>
+				<li class="nav-link"><a href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
   <div ui-view></div>
-  <!-- <ui-view></ui-view> -->
+
+
 </body>
 
-<!-- <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template> -->
-<!-- <footer>
-</footer> -->
+
 
