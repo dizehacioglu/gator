@@ -50,7 +50,12 @@ if (Meteor.isClient) {
       ('EventCtrl', ['$scope', '$meteor',
 		     function ($scope, $meteor) {
 	      console.log("controller!");
-	   $scope.events = $meteor.collection(Events);
+	   // $scope.events = $meteor.collection(Events);
+
+	   $scope.events = $meteor.collection(function() {
+	   		console.log('sorted')
+        return Events.find({}, {sort: {createdAt: -1}})
+      });
 
 	   $scope.$watch('events', eventsChanged, true);
        }]);
