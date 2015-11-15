@@ -26,7 +26,6 @@ body {
 	width: 100%;
 	color:lightgrey;
 	text-align: center;
-	
 }
 
 .map-header p {
@@ -163,17 +162,21 @@ body {
 	/*float: left;*/
 }
 
-
-.posts-table tr {
+.posts-table {
 	width: 100%;
 }
+.posts-table tr {
+	width: 100%;
+	background-color: #028090;
+}
 
-.posts-pictures {
+.posts-table td {
 	width: 50%;
 }
 
-.posts-description {
-	width: 50%;
+
+.posts-pictures img {
+	width: 100%;
 }
 
 .post-pictures {
@@ -185,10 +188,26 @@ body {
 
 .post-descriptions {
 	float: right;
-	height: 100%;
+	/*height: 100%;*/
 	width: 50%;
-	background-color: blue;
+	background-color: #028090;
+	padding: 20px;
+	height: 100%;
+	color: white;
+	font-size: 48px;
+
 }
+
+#post-event-button {
+	height: 110px;
+	text-align: center;
+	font-size: 45px;
+	width: 100%;
+	background-color: #02C39A;
+	border:none;
+	color: white;
+}
+
 
 
 /******************* Add Events Page Styling ***************/
@@ -251,7 +270,12 @@ body {
 	padding: 0;
 }
 
-
+.delete {
+	float: right;
+    position: relative;
+    /*top: 7%;*/
+    right: -2%;
+}
 
 
 

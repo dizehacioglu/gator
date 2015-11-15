@@ -42,23 +42,27 @@
 	</div>
 
 
-	<!-- posts section -->
-	<section class="posts-wrapper" id="posts">
+	<!-- events section -->
+	<section class="posts-wrapper" id="posts" style="display:none;">
 
+		<div id="post-event-button-container">
+			<button id="post-event-button">Post an Event</button>
+		</div>
 		<table class="posts-table">
 			<tr ng-repeat="event in events">
-				<td class="post-pictures"><img src="{{event.image}}" style="max-width:300px; max-height:300px;"></img></td>
-				<td class="post-descriptions">{{event.text}} <button class="delete" ng-click="events.remove(event)">&times;</button>
- </td>
+				<td class="post-pictures" >
+					<img src="{{event.image}}" style="width:100%;"></img>
+				</td>
+				<td class="post-descriptions">{{event.text}} 
+					<button class="delete" ng-click="events.remove(event)">&times;</button>
+				</td>
 			</tr>
 		</table>
 
-<!-- <<<<<<< HEAD -->
-		<button id="post-event-button">Post an Event</button>
-<!-- ======= -->
-		<button id="post">Post an Event</button>
-		<button id="postExamples">Post Examples</button>
-<!-- >>>>>>> origin/master -->
+
+		<!-- <button id="post">Post an Event</button> -->
+		<!-- DO NOT DELETE POST EXAMPLES!!!!!!!!!!!!!!!!!!!!!!!!!!!!! or die -->
+		<button id="postExamples"></button>
 
 	</section>
 
@@ -66,7 +70,7 @@
 
 
 	<!-- Add Posts section -->
-	<section class="add-post-section" id="add-post">
+	<section class="add-post-section" id="add-post" style="display:none;">
 
 		<div class="viewport-container">
   			<video id="video" width="100%"></video>
