@@ -1,13 +1,12 @@
 /* CSS declarations go here */
 body {
-     background-color: blue;
      height: 100%;
 	padding: 0;
 	margin:0;
 }
 
-.map {
-     height: 100%;
+#map {
+     height: 300px;
 }
 
 /******************* Nav Bar Styling ***************/
