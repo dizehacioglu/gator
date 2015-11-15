@@ -21,31 +21,33 @@ body {
 
 
 .map-header {
-	background-color: #02a8c2;
+	background-color: #028090;
 	height: 545px;
 	width: 100%;
-	color:white;
+	color:lightgrey;
 	text-align: center;
 }
 
 .map-header p {
 	font-family: arial;
-	font-size: 100px;
+	font-family: Futura;
+	font-size: 60px;
 	font-weight: 900;
-	line-height: 500px;
+	line-height: 124px;
 }
 
 /******************* Nav Bar Styling ***************/
 
 #nav {
 	display: none;
+	height: 1000px;
 }
 
 .menu-icon {
 	position: absolute;
 	float: right;
-	width: 90px;
-	height: 90px;
+	width: 110px;
+	height: 110px;
 	z-index: 100;
 	right: 0%;
 }
@@ -61,21 +63,41 @@ body {
 
 .nav-bar li {
 	width: 100%;
-	height: 200px;
+	height: 410px;
 	margin: 0;
 	padding: 0;
-	line-height: 200px;
+	line-height: 410px;
 	font-family: Arial;
-	font-size: 50px;
+	font-size: 100px;
 	font-weight: 900;
-	border: 1px solid grey;
 	background-color: #02a8c2;
 }
 
 .nav-link button {
+	background-color: transparent;
 	color: white;
 	text-decoration: none;
+	border: none;
 }
+
+#nav-home-link {
+	background-color: #05668D;
+}
+
+#nav-posts-link {
+	background-color: #028090;
+
+}
+
+#nav-chat-link {
+	background-color: #00A896;
+}
+
+#nav-addpost-link {
+	background-color:  #02C39A;
+}
+
+
 /******************* Login Page Styling ***************/ 
 
 .login-wrapper {
@@ -158,7 +180,6 @@ body {
 	height: 100%;
 	float: left;
 	background-color: black;
-
 }
 
 .post-descriptions {
@@ -166,28 +187,68 @@ body {
 	height: 100%;
 	width: 50%;
 	background-color: blue;
-
 }
 
 
+/******************* Add Events Page Styling ***************/
 
 
+.viewport-container {
+	width: 100%;
+}
+
+#photo {
+	width: 100%;
+}
+
+.add-description-container {
+	width: 100%;
+	text-align: center;
+	margin: 20px 0 10px;
+}
+
+#eventDescription {
+	padding: 20px;
+	width: 100%;
+	height: 525px;
+	background-color: #D0CFCF;
+	border: none;
+	font-size: 48px;
+}
+
+.take-picture-container {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+#takePicture {
+	width: 100%;
+	height: 200px;
+	padding: 0;
+	margin: -20px;
+	border: none;
+	background-color: #00A896;
+	font-size: 70px;
+	/*color: white;*/
+}
 
 
+.submit-event-container {
+	width: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#submitEvent {
+	width: 100%;
+	height: 200px;
+	background-color: #02C39A;
+	border: none;
+	font-size: 70px;
+	color: white;
+	margin: -19px 0;
+	padding: 0;
+}
 
 
 

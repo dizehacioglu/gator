@@ -1,6 +1,7 @@
 <head>
   <title>Gator</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body ng-app="Gator" lang="en" ng-controller="EventCtrl">
@@ -8,16 +9,17 @@
   <p id="status" style="color:red; display:none;">
     <noscript>JavaScript is disabled.</noscript>
   </p>
+
 	<nav>
 		<div>
-			<img id="menu-icon" class="menu-icon" src="https://pbs.twimg.com/profile_images/419236285346086912/ErbuJL4t_400x400.jpeg"/>
+			<img id="menu-icon" class="menu-icon" src="/images/navmenuicon2.png"/>
 		</div> 
 		<div id="nav">
 			<ul class="nav-bar">
-				<li id="nav-home-link"><button>Map</a></li>
-				<li id="nav-posts-link"><button>Events</a></li>
-				<li id="nav-chat-link"><button>Chat</a></li>
-				<!-- <li id="nav-logout-link"><button>Logout</a></li> -->
+				<li id="nav-home-link" class="nav-link"><button>Map&nbsp;<i class="fa fa-map-marker"></i></button></li>
+				<li id="nav-posts-link"  class="nav-link"><button>Events&nbsp;<i class="fa fa-bullhorn"></i></button></li>
+				<li id="nav-chat-link"  class="nav-link"><button>GroupUp&nbsp;<i class="fa fa-users"></i></button></li>
+				<li id="nav-addpost-link"  class="nav-link"><button>Add Event&nbsp;<i class="fa fa-picture-o"></i></button></li>
 			</ul>
 		</div>
 	</nav>
@@ -33,8 +35,9 @@
 
 		</div>
 	</section> 
-	<div class="map-header">
-		<p> Events Near You </p> 
+	<div class="map-header" id="map-header">
+		<img src="/images/logo.png">
+		<p> No More FOMO </p> 
 	</div>
 
 
@@ -49,7 +52,7 @@
 			</tr>
 		</table>
 
-		<button>Post an Event</button>
+		<button id="post-event-button">Post an Event</button>
 
 	</section>
 
@@ -59,21 +62,22 @@
 	<!-- Add Posts section -->
 	<section class="add-post-section" id="add-post">
 
-		<div>
-  <video id="video" width="320" height="200"></video>
-  <canvas id="photo" style="display:none;" width="320" height="280"></canvas>
+		<div class="viewport-container">
+  			<video id="video" width="100%"></video>
+  			<canvas id="photo" style="display:none;" width="100%"></canvas>
 		</div> 
 
-		<div>
-		  <textarea id="eventDescription" rows="4" cols="50"></textarea>
+		<div class="take-picture-container">
+			<button id="takePicture"><i class="fa fa-camera"></i></button> 
 		</div>
 
-		<div>
-			<button id="takePicture">Take Picture</button> 
+		<div class="add-description-container">
+		  <textarea id="eventDescription" rows="4" cols="50" placeholder="Type short description here..."></textarea>
 		</div>
 
-		<div>
-			<button id="submitEvent" disabled="true"> Submit </button> 
+
+		<div class="submit-event-container">
+			<button id="submitEvent" disabled="true"><i class="fa fa-angle-double-right"></i></button> 
 		</div> 
 
 

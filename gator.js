@@ -4,7 +4,7 @@ Events = new Mongo.Collection("events");
 if (Meteor.isClient) {
   var gatorApp = angular.module('Gator',['angular-meteor']);
 
-  var sections = ['nav', 'map', 'posts', 'add-post'];
+  var sections = ['nav', 'map', 'posts', 'add-post', 'map-header'];
 
   var markers = [];
   var map;
@@ -168,21 +168,31 @@ if (Meteor.isClient) {
 
 	    
 	})();
+
+
+
 			function showNav() {
 				if(document.getElementById('nav').style.display === 'block'){
 					document.getElementById('nav').style.display = "none";
 				} else {
 					document.getElementById('nav').style.display = "block";
+					for(var i = 0; i < sections.length; i++){
+	    			if(sections[i] !== 'nav'){
+	    				document.getElementById(sections[i].toString()).style.display = "none";
+	    			}
+	    		}
 				}
 	    		
 	    	}
 
 	    	function showMap() {
 	    		document.getElementById('map').style.display = "block";
+	    		document.getElementById('map-header').style.display = "block";
 	    		for(var i = 0; i < sections.length; i++){
-	    			if(sections[i] !== 'map'){
+	    			if(sections[i] !== 'map' && sections[i] !== 'map-header'){
 	    				document.getElementById(sections[i].toString()).style.display = "none";
 	    			}
+
 	    		}
 	    	}
 
@@ -197,10 +207,31 @@ if (Meteor.isClient) {
 
 	    	}
 
+	    	function showAddPost(){
+	    		document.getElementById('add-post').style.display = "block";
+	    		// document.getElementById('').style.display = "block";
+	    		for(var i = 0; i < sections.length; i++){
+	    			if(sections[i] !== 'add-post'){
+	    				document.getElementById(sections[i].toString()).style.display = "none";
+	    			}
+	    		}	
+	    	}
+
 	    	function init() {
+
+	    		window.onload = function() {
+						document.getElementById('add-post').style.display = "none"
+						document.getElementById('posts').style.display = "none"
+						document.getElementById('add-post').style.display = "block"
+					}
+
 	    		document.getElementById('menu-icon').onclick = showNav
 	    		document.getElementById('nav-home-link').onclick = showMap
 	    		document.getElementById('nav-posts-link').onclick = showPosts
+	    		document.getElementById('nav-addpost-link').onclick = showAddPost
+	    		document.getElementById('post-event-button').onclick = showAddPost
+
+
 	    	}
 
 	    	init()
