@@ -40,7 +40,7 @@
 		<table class="posts-table">
 			<tr ng-repeat="event in events">
 				<td class="post-pictures"><img src="{{event.image}}"></img></td>
-				<td class="post-descriptions">{{event.text}} <button class="delete" ng-click="event.remove(event)">&times;</button>
+				<td class="post-descriptions">{{event.text}} <button class="delete" ng-click="events.remove(event)">&times;</button>
  </td>
 			</tr>
 		</table>
@@ -69,7 +69,7 @@
 		</div>
 
 		<div>
-			<button id="submitEvent"> Submit </button> 
+			<button id="submitEvent" disabled="true"> Submit </button> 
 		</div> 
 
 
