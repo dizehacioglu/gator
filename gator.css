@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 body {
     height: 100%;
+    width: 100%;
 	padding: 0;
 	margin:0;
 }
@@ -30,7 +31,6 @@ body {
 
 .map-header p {
 	font-family: 'Nothing You Could Do', cursive;
-	/*font-family: Futura;*/
 	font-size: 80px;
 	font-weight: 900;
 	line-height: 124px;
@@ -41,6 +41,9 @@ body {
 #nav {
 	display: none;
 	height: 1000px;
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
 }
 
 .menu-icon {
@@ -50,6 +53,7 @@ body {
 	height: 110px;
 	z-index: 100;
 	right: 0%;
+	z-index: 100000;
 }
 
 .nav-bar {
@@ -280,13 +284,26 @@ body {
 
 
 #groupup-image-container img {
+	margin-top: 13%;
 	width: 100%;
 	height: 1641px;
 }
 
+#groupup-image-container {
+	background-color: #00A896;
+}
+
+.group-up-header {
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	color: white;
+	background-color: #00A896;
+	padding: 50px;
+}
 
 
-
-
-
+.group-up-header p {
+	font-size: 60px;
+}
 

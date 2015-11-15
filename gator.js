@@ -206,13 +206,10 @@ if (Meteor.isClient) {
 			function showNav() {
 				if(document.getElementById('nav').style.display === 'block'){
 					document.getElementById('nav').style.display = "none";
-				} else {
+				} 
+
+				else {
 					document.getElementById('nav').style.display = "block";
-					for(var i = 0; i < sections.length; i++){
-	    			if(sections[i] !== 'nav'){
-	    				document.getElementById(sections[i].toString()).style.display = "none";
-	    			}
-	    		}
 				}
 	    		
 	    	}
