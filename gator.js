@@ -146,6 +146,8 @@ if (Meteor.isClient) {
 		notify("ucMsNS1eqbNTPY9vG6UqFQLceEGTZR");
 
 		video.play();
+
+		showPosts();
 	    }
 
 	    function postExamples() {
@@ -228,6 +230,7 @@ if (Meteor.isClient) {
 	    				document.getElementById(sections[i].toString()).style.display = "none";
 	    			}
 	    		}
+	    		document.getElementById('eventDescription').value = '';
 
 	    	}
 
@@ -242,18 +245,12 @@ if (Meteor.isClient) {
 	    	}
 
 	    	function init() {
-
-	    		window.onload = function() {
-						document.getElementById('add-post').style.display = "none"
-						document.getElementById('posts').style.display = "none"
-						document.getElementById('add-post').style.display = "block"
-					}
-
 	    		document.getElementById('menu-icon').onclick = showNav
 	    		document.getElementById('nav-home-link').onclick = showMap
 	    		document.getElementById('nav-posts-link').onclick = showPosts
 	    		document.getElementById('nav-addpost-link').onclick = showAddPost
 	    		document.getElementById('post-event-button').onclick = showAddPost
+	    		// document.getElementById('submitEvent').onclick = showPosts
 
 
 	    	}
