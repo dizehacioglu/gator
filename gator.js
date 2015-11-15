@@ -4,42 +4,41 @@ Events = new Mongo.Collection("events");
 if (Meteor.isClient) {
   var gatorApp = angular.module('Gator',['angular-meteor']);
 
+  var markers = [];
+  var map;
+  var eventsChanged = function () {
+      console.log("events changed!");
+      for (var i = 0; i < markers.length; ++i) {
+	  markers[i].setMap(null);
+      }
+      markers = [];
+
+      if (map) {
+	  var all = Events.find({});
+	  console.log("all ", all);
+	  all.forEach(function (event) {
+		  console.log("event ", event);
+		  markers.push(new google.maps.Marker({
+			      position: event.location,
+				  map: map,
+				  }));
+	      });
+      }
+  };
+		 
+  window.initMap = function() {
+      map = new google.maps.Map(document.getElementById('map'), {
+	      center: {lat: 40.0069364, lng: -105.272157},
+	      zoom: 15
+	  });
+
+      eventsChanged();
+  }
 
    gatorApp.controller('homeController', function ($scope, $meteor) {
     $scope.events = $meteor.collection(Events);
 
-		 var markers = [];
-		 var map;
-		 var eventsChanged = function () {
-		     console.log("events changed!");
-		     for (var i = 0; i < markers.length; ++i) {
-			 markers[i].setMap(null);
-		     }
-		     markers = [];
-
-		     if (map) {
-			 var all = Events.find({});
-			 console.log("all ", all);
-			 all.forEach(function (event) {
-				 console.log("event ", event);
-			     markers.push(new google.maps.Marker({
-					 position: event.location,
-					     map: map,
-					     }));
-			     });
-		     }
-		 };
-
 		 $scope.$watch('events', eventsChanged, true);
-		 
-		 window.initMap = function() {
-		     map = new google.maps.Map(document.getElementById('map'), {
-			     center: {lat: 40.0069364, lng: -105.272157},
-			     zoom: 15
-			 });
-
-		     eventsChanged();
-		 }
        });
 
     window.onload = function() {
