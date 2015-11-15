@@ -273,8 +273,8 @@ body {
 .delete {
 	float: right;
     position: relative;
-    /*top: 7%;*/
     right: -2%;
+    color: red;
 }
 
 
