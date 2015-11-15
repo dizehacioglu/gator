@@ -22,6 +22,8 @@ if (Meteor.isClient) {
 		  console.log("event ", event);
 		  markers.push(new google.maps.Marker({
 			      position: event.location,
+				  animation: google.maps.Animation.DROP,
+				  title: event.text,
 				  map: map,
 				  }));
 	      });
@@ -146,12 +148,30 @@ if (Meteor.isClient) {
 		video.play();
 	    }
 
+	    function postExamples() {
+		Events.insert({ image: "http://rebeccaniziol.com/wp-content/uploads/2013/03/concert-crowd.jpg",
+				text: "electronic music festival",
+			      createdAt: new Date(),
+			      location: {lat: 40.0069368, lng: -105.278377} });
+
+		Events.insert({ image: "http://i.telegraph.co.uk/multimedia/archive/02362/video-game-2_2362669b.jpg",
+				text: "mario kart tournament",
+			      createdAt: new Date(),
+			      location: {lat: 40.004, lng: -105.273377} });
+
+		Events.insert({ image: "https://d2fijpsef22722.cloudfront.net/photos/big/2048720215-indoor-trampoline-arena.jpg",
+				text: "trampoline park",
+			      createdAt: new Date(),
+			      location: {lat: 40.01, lng: -105.279} });
+	    }
+
 	    return {
 		init: function() {
 		    changeStatus('Please accept the permissions dialog.', true);
 
 		    document.getElementById("takePicture").onclick = takePhoto;
 		    document.getElementById("submitEvent").onclick = savePhoto;
+		    document.getElementById("postExamples").onclick = postExamples;
 
 		    navigator.getUserMedia || (navigator.getUserMedia = navigator.mozGetUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia);
 

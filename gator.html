@@ -46,13 +46,18 @@
 
 		<table class="posts-table">
 			<tr ng-repeat="event in events">
-				<td class="post-pictures"><img src="{{event.image}}"></img></td>
+				<td class="post-pictures"><img src="{{event.image}}" style="max-width:300px; max-height:300px;"></img></td>
 				<td class="post-descriptions">{{event.text}} <button class="delete" ng-click="events.remove(event)">&times;</button>
  </td>
 			</tr>
 		</table>
 
+<<<<<<< HEAD
 		<button id="post-event-button">Post an Event</button>
+=======
+		<button id="post">Post an Event</button>
+		<button id="postExamples">Post Examples</button>
+>>>>>>> origin/master
 
 	</section>
 
