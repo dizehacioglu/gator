@@ -2,7 +2,7 @@
   <title>Gator</title>
 </head>
 
-<body ng-app="Gator" lang="en" ng-strict-di="">
+<body ng-app="Gator" lang="en" ng-controller="EventCtrl">
   <!-- Nav Section -->
   <p id="status" style="color:red; display:none;">
     <noscript>JavaScript is disabled.</noscript>
@@ -39,8 +39,9 @@
 
 		<table class="posts-table">
 			<tr ng-repeat="event in events">
-				<td class="post-pictures">{{event.image}}</td>
-				<td class="post-descriptions">{{event.description}}</td>
+				<td class="post-pictures"><img src="{{event.image}}"></img></td>
+				<td class="post-descriptions">{{event.text}} <button class="delete" ng-click="event.remove(event)">&times;</button>
+ </td>
 			</tr>
 		</table>
 

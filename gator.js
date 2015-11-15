@@ -35,11 +35,14 @@ if (Meteor.isClient) {
       eventsChanged();
   }
 
-   gatorApp.controller('homeController', function ($scope, $meteor) {
-    $scope.events = $meteor.collection(Events);
+  angular.module('Gator').controller
+      ('EventCtrl', ['$scope', '$meteor',
+		     function ($scope, $meteor) {
+	      console.log("controller!");
+	   $scope.events = $meteor.collection(Events);
 
-		 $scope.$watch('events', eventsChanged, true);
-       });
+	   $scope.$watch('events', eventsChanged, true);
+       }]);
 
     window.onload = function() {
     var webcam = (function(){
