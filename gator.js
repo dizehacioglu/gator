@@ -4,6 +4,8 @@ Events = new Mongo.Collection("events");
 if (Meteor.isClient) {
   var gatorApp = angular.module('Gator',['angular-meteor']);
 
+  var sections = ['nav', 'map', 'posts', 'add-post'];
+
   var markers = [];
   var map;
   var eventsChanged = function () {
@@ -167,14 +169,38 @@ if (Meteor.isClient) {
 	    
 	})();
 			function showNav() {
-	    		console.log('event triggered')
-	    		document.getElementById('nav').style.display = "block"
+				if(document.getElementById('nav').style.display === 'block'){
+					document.getElementById('nav').style.display = "none";
+				} else {
+					document.getElementById('nav').style.display = "block";
+				}
+	    		
+	    	}
+
+	    	function showMap() {
+	    		document.getElementById('map').style.display = "block";
+	    		for(var i = 0; i < sections.length; i++){
+	    			if(sections[i] !== 'map'){
+	    				document.getElementById(sections[i].toString()).style.display = "none";
+	    			}
+	    		}
+	    	}
+
+	    	function showPosts() {
+	    		document.getElementById('posts').style.display = "block";
+	    		// document.getElementById('').style.display = "block";
+	    		for(var i = 0; i < sections.length; i++){
+	    			if(sections[i] !== 'posts'){
+	    				document.getElementById(sections[i].toString()).style.display = "none";
+	    			}
+	    		}
+
 	    	}
 
 	    	function init() {
 	    		document.getElementById('menu-icon').onclick = showNav
-	    		document.getElementById('nav-home-link').on('click', api.showMap)
-	    		document.getElementById('nav-posts-link').on('click', api.showPosts)
+	    		document.getElementById('nav-home-link').onclick = showMap
+	    		document.getElementById('nav-posts-link').onclick = showPosts
 	    	}
 
 	    	init()
