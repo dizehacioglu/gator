@@ -4,6 +4,13 @@ body {
 	margin:0;
 }
 
+/******************* Nav Bar Styling ***************/
+
+.nav {
+
+}
+
+
 /******************* Login Page Styling ***************/ 
 
 .login-wrapper {
@@ -57,24 +64,26 @@ body {
 	font-size: 48px;
 }
 
-/******************* Nav Bar Styling ***************/
 
-.nav {
-
-}
 
 /******************* Posts Page Styling ***************/
 
 .posts-wrapper {
+	height: 100%;
+	/*float: left;*/
 }
 
 .post-pictures {
 	width: 50%;
+	height: 100%;
+	float: left;
 	background-color: black;
 
 }
 
 .post-descriptions {
+	float: right;
+	height: 100%;
 	width: 50%;
 	background-color: blue;
 
