@@ -1,1 +1,58 @@
 /* CSS declarations go here */
+body {
+	padding: 0;
+	margin:0;
+}
+
+/******************* Login Page Styling ***************/ 
+
+.login-wrapper {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.hero-background {
+	overflow: hidden;
+	height: 70%;
+	/*position: relative;*/
+	background-color: #02b675;
+}
+
+.logo-image-container {
+	/*position: absolute;*/
+	width: 100%;
+	/*height: 90%;*/
+	text-align: center;
+	top: 50%;
+	/*transform: translate(-50%, -50%);*/	
+}
+
+.logo-image img {
+	display: inline-block;
+	/*top: 50%;*/
+}
+
+.login-form-container {
+	width: 100%;
+	height: 30%;
+	/*height: 200px;*/
+	background-color: white;
+}
+
+.login-button-container {
+/*	padding: 0;
+	margin: 0;
+	width: 100%;*/
+	height: 50%;
+	/*text-align: center;*/
+}
+
+.login-button-container input {
+	background-color: white;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 48px;
+}
