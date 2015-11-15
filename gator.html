@@ -1,11 +1,12 @@
 <head>
-	<base href="/">
-	<script>console.log('duplicated if jQuery');</script>
-	<link(rel="stylesheet", href="gator.css")></link>
+  <title>Gator</title>
 </head>
 
 <body ng-app="Gator" lang="en" ng-strict-di="">
   <!-- Nav Section -->
+  <p id="status" style="color:red; display:none;">
+    <noscript>JavaScript is disabled.</noscript>
+  </p>
 	<nav>
 		<div>
 			<img class="menu-icon" src="/images/navmenuicon.png"/>
@@ -34,7 +35,7 @@
 
 
 	<!-- posts section -->
-	<section class="posts-wrapper" ng-controller="postsController">
+	<section class="posts-wrapper">
 
 		<table class="posts-table">
 			<tr ng-repeat="event in events">
@@ -54,11 +55,13 @@
 	<section class="add-post-section">
 
 		<div>
-			<!-- camera view port goes here -->
+  <video id="video" width="320" height="200"></video>
+  <canvas id="photo" style="display:none;" width="320" height="280"></canvas>
 		</div> 
 
 		<div>
-			<input id="eventDescription" type='text' placeholder="Add a Description"/> 
+		  <textarea id="eventDescription" rows="4" cols="50">
+		  </textarea>
 		</div>
 
 		<div>
