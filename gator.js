@@ -146,7 +146,12 @@ if (Meteor.isClient) {
 
 	    }
 
+
+
+	    
 	})();
     }
+
+
 
 }
