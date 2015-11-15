@@ -19,7 +19,58 @@
 			</ul>
 		</div>
 	</nav>
-  <div ui-view></div>
+  <!-- <div ui-view></div> -->
+
+	<!-- Map Section -->
+	<section class="map-section">
+		<div class="map">
+
+
+
+
+
+		</div>
+	</section> 
+
+
+	<!-- posts section -->
+	<section class="posts-wrapper" ng-controller="postsController">
+
+		<table class="posts-table">
+			<tr ng-repeat="event in events">
+				<td class="post-pictures">{{event.image}}</td>
+				<td class="post-descriptions">{{event.description}}</td>
+			</tr>
+		</table>
+
+		<button>Post an Event</button>
+
+	</section>
+
+
+
+
+	<!-- Add Posts section -->
+	<section class="add-post-section">
+
+		<div>
+			<!-- camera view port goes here -->
+		</div> 
+
+		<div>
+			<input id="eventDescription" type='text' placeholder="Add a Description"/> 
+		</div>
+
+		<div>
+			<button id="takePicture">Take Picture</button> 
+		</div>
+
+		<div>
+			<button id="submitEvent"> Submit </button> 
+		</div> 
+
+
+	</section> 
 
 
 </body>
